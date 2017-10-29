@@ -1,0 +1,40 @@
+{
+  "name": "bus-ticket-booking",
+  "description": "Sample Bus ticket booking Angular.js",
+  "authors": [
+    "Laxit Kumar <kumar.laxit@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bus",
+    "booking",
+    "ticket",
+    "sample",
+    "app"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "lib",
+    "test",
+    "tests",
+    "*.md",
+    "gulpfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^1.0.10",
+    "angularjs-slider": "^6.4.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

@@ -1,0 +1,67 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample App - Bus Ticket Booking</title>
+    <meta name="description" content="Bus ticket booking">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- build:css(lib) vendor.css -->
+    <!-- external:css -->
+
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="angularjs-slider/dist/rzslider.css">
+
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- build:css(lib) app.css -->
+    <!-- inject:css -->
+
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</head>
+<body data-ng-app="btb.ui" data-ng-cloak>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" data-ui-sref="#">BTB</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a data-ui-sref="bookTicket">Book Tickets</a></li>
+        <li><a data-ui-sref="adminPanel">Admin Panel</a></li>
+    </ul>
+</nav>
+
+<!-- Main content where all routes will be rendered -->
+<div class="container-fluid">
+    <div data-ui-view></div>
+</div>
+
+
+<!-- build:js(lib) vendor.js -->
+<!-- external:js -->
+<script src="jquery/dist/jquery.js"></script>
+<script src="angular/angular.js"></script>
+<script src="bootstrap/dist/js/bootstrap.js"></script>
+<script src="angular-ui-router/release/angular-ui-router.js"></script>
+<script src="angularjs-slider/dist/rzslider.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
+
+<!-- build:js(src) app.js -->
+<!-- inject:js -->
+<script src="app.js"></script>
+<script src="admin-panel/adminPanel.js"></script>
+<script src="book-ticket/bookTicket.js"></script>
+<script src="services/busDetails.js"></script>
+<script src="components/bus-list/busList.js"></script>
+<script src="components/bus-list/busListFilter.js"></script>
+<script src="components/seats-selection/seatsSelection.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
+</body>
+</html>

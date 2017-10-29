@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "totalSeats": "20",
+    "availableSeats": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "2",
+    "totalSeats": "17",
+    "availableSeats": [
+      0,
+      5,
+      7,
+      8,
+      9,
+      10,
+      16
+    ]
+  },
+  {
+    "id": "3",
+    "totalSeats": "7",
+    "availableSeats": [
+      0,
+      4,
+      6
+    ]
+  },
+  {
+    "id": "4",
+    "totalSeats": "10",
+    "availableSeats": [
+      0,
+      5
+    ]
+  }
+]

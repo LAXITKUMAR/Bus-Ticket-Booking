@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Airavat",
+    "departureTime": "2010-01-14T04:33:35Z",
+    "arrivalTime": "2010-01-14T06:33:35Z",
+    "cost": "1100",
+    "type": "AC"
+  },
+  {
+    "id": "2",
+    "name": "AiravatBGR",
+    "departureTime": "2010-01-14T05:33:35Z",
+    "arrivalTime": "2010-01-14T00:33:35Z",
+    "cost": "1900",
+    "type": "NON-AC"
+  },
+  {
+    "id": "3",
+    "name": "SRS Travels",
+    "departureTime": "2010-01-14T00:33:35Z",
+    "arrivalTime": "2010-01-14T07:33:35Z",
+    "cost": "2100",
+    "type": "AC"
+  },
+  {
+    "id": "4",
+    "name": "VRL Travels",
+    "departureTime": "2010-01-14T05:33:35Z",
+    "arrivalTime": "2010-01-14T08:33:35Z",
+    "cost": "900",
+    "type": "NON-AC"
+  }
+]

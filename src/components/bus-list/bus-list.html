@@ -1,0 +1,70 @@
+<div class="row bus-list-comp">
+    <div class="col-sm-3 col-md-3">
+        <a class="btn btn-danger btn-block">Refine Results</a>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Departure Time</h3>
+            </div>
+            <div class="panel-body">
+                <rzslider
+                        rz-slider-model="$ctrl.filterObj.deptSlider.min"
+                        rz-slider-high="$ctrl.filterObj.deptSlider.max"
+                        rz-slider-options="$ctrl.filterObj.deptSlider.options"></rzslider>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Cost of Ride</h3>
+            </div>
+            <div class="panel-body">
+                <rzslider
+                        rz-slider-model="$ctrl.filterObj.costSlider.min"
+                        rz-slider-high="$ctrl.filterObj.costSlider.max"
+                        rz-slider-options="$ctrl.filterObj.costSlider.options"></rzslider>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Bus type</h3>
+            </div>
+            <div class="panel-body">
+                <div class="checkbox">
+                    <label><input type="checkbox" data-ng-model="$ctrl.filterObj.busType.AC" value="AC">AC</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" data-ng-model="$ctrl.filterObj.busType.NONAC"
+                                  value="NONAC">Non-AC</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9 col-md-9">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Cost</th>
+                <th>Type</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="bus in $ctrl.list | filterBuses:$ctrl.filterObj track by bus.id">
+                <td>{{bus.name}}</td>
+                <td>{{bus.departureTime | date : "HH:mm"}} Hrs</td>
+                <td>{{bus.arrivalTime | date : "HH:mm"}} Hrs</td>
+                <td>Rs.{{bus.cost}}</td>
+                <td>{{bus.type}}</td>
+                <td>
+                    <seats-selection bus-details="bus"></seats-selection>
+                </td>
+            </tr>
+            <tr data-ng-if="!$ctrl.list.length">
+                <td>No results found</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

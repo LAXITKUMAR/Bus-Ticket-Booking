@@ -1,0 +1,46 @@
+<!-- select seats by openeing modal with a button -->
+<button type="button" class="btn btn-primary" data-toggle="modal"
+        data-target="{{'#seatSelection-'+ $ctrl.busDetails.id }}"
+        data-ng-click="$ctrl.getSeatsDetails($ctrl.busDetails.id)">Select seats
+</button>
+
+<!-- Seat selection modal -->
+<div id="{{'seatSelection-'+ $ctrl.busDetails.id }}" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Select seats ({{$ctrl.busDetails.name}})</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="row container-fluid">
+                        <div>
+                            <div class="btn col-xs-4 pull-right">Driver Seat</div>
+                        </div>
+                        <div>
+                            <hr/>
+                        </div>
+                        <div ng-repeat="i in $ctrl.getTotalSeats() track by $index">
+                            <button class="col-xs-2 btn btn-default"
+                                    data-ng-class="{'btn-success': $ctrl.selectedSeats.indexOf($index) != -1}"
+                                    data-ng-disabled="{{$ctrl.seatMap.availableSeats.indexOf($index) === -1}}"
+                                    data-ng-click="$ctrl.selectSeats($index)">{{$index + 1}}
+                            </button>
+                            <div data-ng-if="$index%4 === 1" class="col-xs-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"
+                        data-ng-click="$ctrl.submitSeatSelections($ctrl.busDetails)">Continue
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
