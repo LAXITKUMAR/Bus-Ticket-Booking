@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var app = angular.module("btb.ui", ['ui.router','rzModule']);
+    var app = angular.module("btb.ui", ['ui.router', 'rzModule']);
     app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
@@ -19,6 +19,13 @@
                 templateUrl: './admin-panel/admin-panel.html',
                 controller: 'adminPanelCtrl',
                 controllerAs: 'apCtrl'
+            })
+            // Booking Details route =================================
+            .state('bookingDetails', {
+                url: '/booking-details',
+                templateUrl: './booking-details/booking-details.html',
+                controller: 'bookingDetailsCtrl',
+                controllerAs: 'bdCtrl'
             });
     }]);
 })();

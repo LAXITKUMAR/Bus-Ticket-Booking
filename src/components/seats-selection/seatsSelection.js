@@ -4,7 +4,7 @@
 (function () {
     'use strict';
     var app = angular.module("btb.ui");
-    var seatsSelectionCtrl = function (BusDetails) {
+    var seatsSelectionCtrl = function (BusDetails, BookingDetails, $state, $element) {
         var self = this;
         self.seatMap = {};
         self.selectedSeats = []; //Array of selected seats
@@ -34,9 +34,13 @@
          */
         self.submitSeatSelections = function (selectedBus) {
             console.log("Selected seats:", self.selectedSeats);
+            selectedBus.selectedSeats = self.selectedSeats;
+            BookingDetails.saveSelectedBusDetails(selectedBus);
+            $element.find("#seatSelection-" + selectedBus.id).removeClass('fade').modal('hide'); //Close the modal
+            $state.go('bookingDetails'); //Go to booking details page
         };
     };
-    seatsSelectionCtrl.$inject = ['BusDetails'];
+    seatsSelectionCtrl.$inject = ['BusDetails', 'BookingDetails', '$state', '$element'];
     app.component("seatsSelection", {
         templateUrl: "/components/seats-selection/seats-selection.html",
         controller: seatsSelectionCtrl,

@@ -1,0 +1,54 @@
+<div>
+    <form name="passengerForm" novalidate>
+        <div class="form-group" ng-repeat="passenger in $ctrl.pDetails">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Seat No {{passenger.seatNo}} passenger's details</h3>
+                </div>
+                <div class="panel-body">
+                    <ng-form name="passengerFieldForm">
+
+                        <!-- Name input field -->
+                        <div class="form-group" data-ng-class="{ 'has-error' : passengerFieldForm.fullName.$invalid }">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="fullName" ng-model="passenger.fullName"
+                                   required>
+                            <p class="help-block" ng-show="passengerFieldForm.fullName.$invalid">Enter passenger's
+                                name</p>
+                        </div>
+
+                        <!-- Email input field -->
+                        <div class="form-group" data-ng-class="{ 'has-error' : passengerFieldForm.email.$invalid }">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" ng-model="passenger.email" required>
+                            <p class="help-block" ng-show="passengerFieldForm.email.$invalid">Valid Email Address
+                                Required</p>
+                        </div>
+
+                        <!-- Gender input field -->
+                        <div class="form-group" data-ng-class="{ 'has-error' : passengerFieldForm.gender.$invalid }">
+                            <b>Gender</b>
+                            <div class="radio"><label><input type="radio" ng-model="passenger.gender" name="gender"
+                                                             value="male"
+                                                             required>Male</label></div>
+                            <div class="radio"><label><input type="radio" ng-model="passenger.gender" name="gender"
+                                                             value="female" required>Female</label></div>
+                            <p class="help-block" ng-show="passengerFieldForm.gender.$invalid">Select gender</p>
+                        </div>
+
+                        <!-- Age input field -->
+                        <div class="form-group" data-ng-class="{ 'has-error' : passengerFieldForm.age.$invalid }">
+                            <label>Age</label>
+                            <input type="number" class="form-control" name="age" ng-model="passenger.age" required>
+                            <p class="help-block" ng-show="passengerFieldForm.age.$invalid">Enter passenger's age</p>
+                        </div>
+
+                    </ng-form>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button class="btn btn-primary" data-ng-disabled="passengerForm.$invalid"
+            data-ng-click="$ctrl.saveDetails($ctrl.pDetails)">Book Tickets
+    </button>
+</div>
