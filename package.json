@@ -23,7 +23,7 @@
     "gulp-connect": "5.7.0",
     "gulp-filter": "7.0.0",
     "gulp-imagemin": "8.0.0",
-    "gulp-inject": "4.3.2",
+    "gulp-inject": "5.0.5",
     "gulp-jshint": "2.1.0",
     "gulp-load-plugins": "1.6.0",
     "gulp-plumber": "1.2.1",
