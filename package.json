@@ -34,7 +34,7 @@
     "jshint-stylish": "2.2.1",
     "lazypipe": "1.0.2",
     "main-bower-files": "2.13.3",
-    "open": "10.0.1",
+    "open": "10.0.2",
     "rimraf": "5.0.5",
     "run-sequence": "2.2.1"
   }
