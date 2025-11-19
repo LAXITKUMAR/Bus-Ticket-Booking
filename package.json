@@ -35,7 +35,7 @@
     "lazypipe": "1.0.2",
     "main-bower-files": "2.13.3",
     "open": "11.0.0",
-    "rimraf": "6.1.0",
+    "rimraf": "6.1.2",
     "run-sequence": "2.2.1"
   }
 }
